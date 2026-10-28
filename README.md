@@ -99,6 +99,41 @@ Every page loads (in order):
 2. `js/firebase-config.js`  
 3. `js/app.js`
 
+
+## Storage architecture
+
+| Content | Where it is stored |
+|---------|-------------------|
+| Gallery photos | **Cloudinary** (file) + Firestore `gallery` (URL, caption, metadata) |
+| Newsletter images | **Cloudinary** folder `…/newsletters` + Firestore `newsletters.imageUrl` |
+| Newsletter title & body | **Firebase Firestore** collection `newsletters` |
+| Hero slideshow images | **Cloudinary** (when admin uploads) + Firestore `settings/hero` |
+| Hero / gallery videos | **Cloudinary** (`…/videos`) + Firestore URL / `resourceType: video` |
+| Member accounts | **Firebase Auth** + Firestore `users` |
+| Contact messages | **Firestore** `messages` + opens WhatsApp |
+
+Firestore collection for newsletters:
+
+```
+newsletters/{id}
+  title: string
+  body: string          // plain text
+  imageUrl: string      // Cloudinary secure_url (optional)
+  imagePublicId: string
+  author: string
+  createdAt: timestamp
+  published: boolean
+```
+
+Add to security rules:
+
+```
+match /newsletters/{id} {
+  allow read: if true;
+  allow write: if isAdmin();
+}
+```
+
 ## 5. First admin
 
 Use an email listed in `adminEmails`, or set `role: "admin"` on a user document in Firestore. Then open **admin.html**.
