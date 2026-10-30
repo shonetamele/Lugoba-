@@ -7,14 +7,13 @@
  */
 window.LMCC_CONFIG = {
   firebase: {
-      apiKey: "AIzaSyDun0D4bAGg_gxOgz4rZ4cACJkY9jX76wE",
-  authDomain: "pearl-dreams-safaris-42fe8.firebaseapp.com",
-  databaseURL: "https://pearl-dreams-safaris-42fe8-default-rtdb.firebaseio.com",
-  projectId: "pearl-dreams-safaris-42fe8",
-  storageBucket: "pearl-dreams-safaris-42fe8.firebasestorage.app",
-  messagingSenderId: "23903308074",
-  appId: "1:23903308074:web:b89a9fd41e949320e93653",
-  measurementId: "G-SG2LXJQPY8"
+     apiKey: "AIzaSyCcspF5aUBaA4JFNFKhROVGssw7UdMyo14",
+  authDomain: "lugoba-19106.firebaseapp.com",
+  projectId: "lugoba-19106",
+  storageBucket: "lugoba-19106.firebasestorage.app",
+  messagingSenderId: "557880643763",
+  appId: "1:557880643763:web:1edf41f5b18d97685ae0c6",
+  measurementId: "G-Q6CYQJEPK1"
   },
   cloudinary: {
     cloudName: "r7eut0eh",
