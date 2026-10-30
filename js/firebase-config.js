@@ -7,7 +7,8 @@
  */
 window.LMCC_CONFIG = {
   firebase: {
-     apiKey: "AIzaSyCcspF5aUBaA4JFNFKhROVGssw7UdMyo14",
+    const firebaseConfig = {
+  apiKey: "AIzaSyCcspF5aUBaA4JFNFKhROVGssw7UdMyo14",
   authDomain: "lugoba-19106.firebaseapp.com",
   projectId: "lugoba-19106",
   storageBucket: "lugoba-19106.firebasestorage.app",
