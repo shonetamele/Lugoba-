@@ -7,16 +7,18 @@
  */
 window.LMCC_CONFIG = {
   firebase: {
-    apiKey: "YOUR_FIREBASE_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    const firebaseConfig = {
+  apiKey: "AIzaSyCcspF5aUBaA4JFNFKhROVGssw7UdMyo14",
+  authDomain: "lugoba-19106.firebaseapp.com",
+  projectId: "lugoba-19106",
+  storageBucket: "lugoba-19106.firebasestorage.app",
+  messagingSenderId: "557880643763",
+  appId: "1:557880643763:web:1edf41f5b18d97685ae0c6",
+  measurementId: "G-Q6CYQJEPK1"
   },
   cloudinary: {
-    cloudName: "YOUR_CLOUDINARY_CLOUD_NAME",
-    uploadPreset: "YOUR_UNSIGNED_UPLOAD_PRESET",
+    cloudName: "r7eut0eh",
+    uploadPreset: "lugoba_gallery",
     folder: "lugoba-miracle-center"
   },
   adminEmails: [
