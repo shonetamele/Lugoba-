@@ -5,9 +5,24 @@
 (function () {
   'use strict';
 
+  // Always expose LMCC so login buttons never throw "LMCC is not defined"
+  window.LMCC = window.LMCC || {};
+
   const CFG = window.LMCC_CONFIG;
   if (!CFG || !CFG.firebase) {
-    console.error('LMCC_CONFIG missing. Check js/firebase-config.js');
+    console.error('LMCC_CONFIG missing. Check that js/firebase-config.js is uploaded and loads before js/app.js');
+    LMCC.signInEmail = function () {
+      return Promise.reject(new Error('Config missing: upload js/firebase-config.js with your Firebase keys'));
+    };
+    LMCC.signInGoogle = function () {
+      return Promise.reject(new Error('Config missing: upload js/firebase-config.js with your Firebase keys'));
+    };
+    LMCC.isAdmin = function () { return false; };
+    LMCC.esc = function (s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    };
     return;
   }
 
