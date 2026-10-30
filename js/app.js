@@ -84,7 +84,7 @@
   }
 
   function isConfigured() {
-    return CFG.firebase.apiKey && CFG.firebase.apiKey !== 'YOUR_FIREBASE_API_KEY';
+    return CFG.firebase.apiKey && CFG.firebase.apiKey !== 'AIzaSyCcspF5aUBaA4JFNFKhROVGssw7UdMyo14';
   }
 
   function initFirebase() {
