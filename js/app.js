@@ -349,7 +349,7 @@
 
   LMCC.uploadToCloudinary = async function (file, subfolder) {
     var c = CFG.cloudinary;
-    if (!c || !c.cloudName || c.cloudName === 'YOUR_CLOUDINARY_CLOUD_NAME') {
+    if (!c || !c.cloudName || c.cloudName === 'r7eut0eh') {
       throw new Error('Cloudinary not configured. Set cloudName and uploadPreset in js/firebase-config.js');
     }
     var isVideo = (file.type || '').indexOf('video/') === 0 ||
