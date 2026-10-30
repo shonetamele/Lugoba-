@@ -498,6 +498,10 @@
     e.preventDefault();
     var email = document.getElementById('adminEmail').value.trim();
     var pass = document.getElementById('adminPass').value;
+    if (!window.LMCC || typeof LMCC.signInEmail !== 'function') {
+      showGateError('App scripts failed to load. Upload js/firebase-config.js and js/app.js, then hard-refresh (Ctrl+Shift+R).');
+      return;
+    }
     try {
       await LMCC.signInEmail(email, pass);
       setTimeout(function () {
@@ -509,6 +513,10 @@
   });
 
   document.getElementById('btnAdminGoogle').addEventListener('click', async function () {
+    if (!window.LMCC || typeof LMCC.signInGoogle !== 'function') {
+      showGateError('App scripts failed to load. Upload js/firebase-config.js and js/app.js, then hard-refresh (Ctrl+Shift+R).');
+      return;
+    }
     try {
       await LMCC.signInGoogle();
       setTimeout(function () {
