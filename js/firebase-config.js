@@ -7,16 +7,18 @@
  */
 window.LMCC_CONFIG = {
   firebase: {
-    apiKey: "YOUR_FIREBASE_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+      apiKey: "AIzaSyAkUO02xkxGUUvgt2-C2UNRB_K6v3pBgiQ",
+  authDomain: "brendava-tours-and-travel.firebaseapp.com",
+  databaseURL: "https://brendava-tours-and-travel-default-rtdb.firebaseio.com",
+  projectId: "brendava-tours-and-travel",
+  storageBucket: "brendava-tours-and-travel.firebasestorage.app",
+  messagingSenderId: "732703885570",
+  appId: "1:732703885570:web:3011a3989d5fe36eb69a1b",
+  measurementId: "G-ZC356HMW9C"
   },
   cloudinary: {
     cloudName: "YOUR_CLOUDINARY_CLOUD_NAME",
-    uploadPreset: "YOUR_UNSIGNED_UPLOAD_PRESET",
+    uploadPreset: "lugoba_gallery",
     folder: "lugoba-miracle-center"
   },
   adminEmails: [
