@@ -43,38 +43,11 @@ window.LMCC_CONFIG = {
 | `settings` | Doc `hero` = slideshow or video |
 | `messages` | Contact form log |
 
-### Example security rules
+### Security rules
 
-```
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    function isAdmin() {
-      return request.auth != null &&
-        request.auth.token.email in ['mcclfoundation@gmail.com'];
-    }
-    match /users/{userId} {
-      allow read: if request.auth != null;
-      allow create: if request.auth != null && request.auth.uid == userId;
-      allow update: if isAdmin() ||
-        (request.auth.uid == userId &&
-         !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role','status']));
-    }
-    match /gallery/{id} {
-      allow read: if true;
-      allow write: if isAdmin();
-    }
-    match /settings/{id} {
-      allow read: if true;
-      allow write: if isAdmin();
-    }
-    match /messages/{id} {
-      allow create: if true;
-      allow read, update, delete: if isAdmin();
-    }
-  }
-}
-```
+Paste the contents of **`firestore.rules`** (in this folder) into Firebase Console → Firestore → Rules → **Publish**.
+Edit the admin email list inside it if you add more admins. These rules enforce that **only the admin** can approve/reject/remove
+members, delete gallery items, newsletters, messages, recordings and live comments, and that only **approved** members can read or post live comments.
 
 ## 3. Cloudinary
 
@@ -125,14 +98,6 @@ newsletters/{id}
   published: boolean
 ```
 
-Add to security rules:
-
-```
-match /newsletters/{id} {
-  allow read: if true;
-  allow write: if isAdmin();
-}
-```
 
 ## 5. First admin
 
@@ -147,3 +112,28 @@ Upload the folder to any static host (Firebase Hosting, Netlify, cPanel, etc.).
 Lugoba Miracle Center Church · Lugoba, Kampala (Bombo Road)  
 WhatsApp +256 704 476 063 · mcclfoundation@gmail.com  
 Senior Pastor Teopisther Najjuma · Branch Pastor Robert Kalyowa
+
+
+## Live stream
+
+- Page: `live.html` — only **approved** members (or admins) can watch and comment.
+- Admin starts stream from **Admin → Live Stream** with a YouTube Live URL (best HD quality) or direct video URL.
+- Comments: Firestore `livestream_comments` (real-time).
+- Settings: `settings/livestream`.
+- Recordings: collection `recordings` (URL + title).
+
+Firestore rules for the live stream are already included in `firestore.rules`.
+
+**Quality tip:** Use YouTube Live Studio for professional image quality and automatic recording, then paste the video link under “Save recording”.
+
+
+### Advanced recording → Cloudinary
+
+From **Admin → Live Stream**:
+
+1. **Open camera** or **Share screen**
+2. **Start recording** (browser MediaRecorder, HD when device supports it)
+3. **Stop & upload** — video is uploaded to Cloudinary folder `recordings` and saved in Firestore `recordings`
+4. Members see it under **Recordings** on `live.html`
+
+Live multi-viewer HD video still works best via **YouTube Live URL** while comments stay on your site. Recording can be both on YouTube and uploaded to Cloudinary.
