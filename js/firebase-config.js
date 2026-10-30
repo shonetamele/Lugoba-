@@ -7,14 +7,14 @@
  */
 window.LMCC_CONFIG = {
   firebase: {
-      apiKey: "AIzaSyAkUO02xkxGUUvgt2-C2UNRB_K6v3pBgiQ",
-  authDomain: "brendava-tours-and-travel.firebaseapp.com",
-  databaseURL: "https://brendava-tours-and-travel-default-rtdb.firebaseio.com",
-  projectId: "brendava-tours-and-travel",
-  storageBucket: "brendava-tours-and-travel.firebasestorage.app",
-  messagingSenderId: "732703885570",
-  appId: "1:732703885570:web:3011a3989d5fe36eb69a1b",
-  measurementId: "G-ZC356HMW9C"
+      apiKey: "AIzaSyDun0D4bAGg_gxOgz4rZ4cACJkY9jX76wE",
+  authDomain: "pearl-dreams-safaris-42fe8.firebaseapp.com",
+  databaseURL: "https://pearl-dreams-safaris-42fe8-default-rtdb.firebaseio.com",
+  projectId: "pearl-dreams-safaris-42fe8",
+  storageBucket: "pearl-dreams-safaris-42fe8.firebasestorage.app",
+  messagingSenderId: "23903308074",
+  appId: "1:23903308074:web:b89a9fd41e949320e93653",
+  measurementId: "G-SG2LXJQPY8"
   },
   cloudinary: {
     cloudName: "r7eut0eh",
