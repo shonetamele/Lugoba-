@@ -1,6 +1,6 @@
 /**
  * Lugoba Miracle Center Church — Application Core
- * Real Firebase Auth + Firestore + Cloudinary. No demo mode.
+ * Real Firebase Auth + Firestore + Cloudinary.
  */
 (function () {
   'use strict';
