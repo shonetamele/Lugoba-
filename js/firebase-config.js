@@ -1,10 +1,4 @@
-/**
- * Lugoba Miracle Center Church — Configuration
- * Replace every YOUR_* value with your real credentials.
- *
- * Cloudinary: create an unsigned upload preset that allows both
- * images and videos (Settings → Upload → Upload presets).
- */
+
 window.LMCC_CONFIG = {
   firebase: {
    apiKey: "AIzaSyCcspF5aUBaA4JFNFKhROVGssw7UdMyo14",
