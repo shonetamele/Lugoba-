@@ -16,7 +16,7 @@ service cloud.firestore {
     function isListedAdmin() {
       return signedIn()
         && request.auth.token.email_verified == true
-        && request.auth.token.email in ['mcclfoundation@gmail.com'];
+        && request.auth.token.email in ['churchlugobamiraclecenter@gmail.com'];
     }
     function isAdmin() {
       return isListedAdmin()
